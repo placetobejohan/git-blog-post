@@ -21,14 +21,38 @@ However, the staging area also allows you to make several changes and then decid
 
 For completeness, let me add that the staging area can be skipped with the `--all` flag if you only need to modify or delete existing files: `git commit -a`.
 
-### Branches and HEAD
-Git supports the idea of branching. This allows one or more developers to work on several features or bugfixes at the same time. Whenever you make code changes you need to make them on a branch. When you create a new repository with `git init` you will initially have only one branch `master` or `main`. 
+### Branches
+Git supports the idea of branching. Whenever you make code changes you need to make them on a branch. This allows one or more developers to work on several features or bugfixes at the same time, on a different branch. When you create a new repository with `git init` you will initially have only one branch `master` or `main`. 
 
-A branch is defined by its commit history. Let's say we start out on master and have made 2 commits A en B.
+A branch is inherently defined by its commit history. For [this repository](https://github.com/placetobejohan/git-blog-post) I started out on main and have made the following commits so far:
 
+```
+[main ≡ +0 ~1 -0 !]> git log --oneline
+863738c (HEAD -> main, origin/main) staging area
+0f3b217 add notes
+513b96f git blog post: initial commit
+c6d5179 gitignore
+```
 
+This is a first draft of the article and I'm still considering different approaches. To start working on one of them without directly affecting the main branch - which will contain the final version - I'll create a new branch off off the main one with `git checkout -b`. Right now the only thing that differs this new branch from `main` is its name. As you can see, the commit history is exactly the same:
+
+```
+[section-branches +0 ~1 -0 !]> git log --oneline     
+863738c (HEAD -> section-branches, origin/main, main) staging area
+0f3b217 add notes
+513b96f git blog post: initial commit
+c6d5179 gitignore
+```
+
+Git actually stores these commits only once but let's not dive in too deep here. As soon as I've added a new commit the new branch's history will be unique and different from `main`'s history. In the mean time, `main` can also keep growing, diverging away from the `section-branches` branch. 
+
+So Git branches operate like branches of a tree, the main difference being that they can also be merged into one another - barring some exotic tree species. More on merging in the section on [git merge](#git-merge).
+
+### Refs and HEAD
 
 how does git know which code to show (local repo)
+
+tell you about .git folder
 
 ### Remote repository
 As soon as you want to share your code with other developers, you need a central repository which is then the official version of the codebase. It's where a new developer gets his local copy from with `git clone`. Every developer .
@@ -36,7 +60,7 @@ As soon as you want to share your code with other developers, you need a central
 
 
 ## Common commands
-Yikes! That was one lengthy introduction, perhaps we should come up for a bit of air - I hope you're not in a `detached HEAD` state yet. Either way I think it shows that even with the basics of Git there's already a lot going on behind the scenes, and that it's worth it to take a closer look at what's really going on and how we can make the most of how Git works. Now let's move on to some of the basic Git commands you're all familiar with.
+Yikes! That was one lengthy introduction, perhaps we should come up for a bit of air before we get the bends. Either way I think it shows that even with the basics of Git there's already a lot going on behind the scenes, and that it's worth it to take a closer look at what's really going on and how we can make the most of how Git works. Now let's move on to some of the basic Git commands you're all familiar with.
 
 ### git commit
 
@@ -56,6 +80,7 @@ Yikes! That was one lengthy introduction, perhaps we should come up for a bit of
 
 ## There's a lot more to (G)it
 
+ - I hope you're not in a `detached HEAD` state yet
 Tools: Posh Git, VSCode extensions
 
 ## References
