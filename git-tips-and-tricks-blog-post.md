@@ -44,15 +44,15 @@ This is a first draft of the article and I'm still considering different approac
 c6d5179 gitignore
 ```
 
-Git actually stores these commits only once but let's not dive in too deep here. As soon as I've added a new commit the new branch's history will be unique and different from `main`'s history. In the mean time, `main` can also keep growing, diverging away from the `section-branches` branch. 
+Git actually stores these commits only once but let's not dive in too deep here. As soon as I've added a new commit the new branch's history will be unique and different from `main`'s history. In the mean time, `main` can also keep growing, diverging further away from the `section-branches` branch. 
 
 So Git branches operate like branches of a tree, the main difference being that they can also be merged into one another - barring some exotic tree species. More on merging in the section on [git merge](#git-merge).
 
-### Refs and HEAD
+### References and HEAD
 
 how does git know which code to show (local repo)
 
-tell you about .git folder
+good time to tell you about .git folder
 
 ### Remote repository
 As soon as you want to share your code with other developers, you need a central repository which is then the official version of the codebase. It's where a new developer gets his local copy from with `git clone`. Every developer .
