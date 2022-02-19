@@ -15,13 +15,11 @@ To make a change, you start editing your code. The changes will first be made in
 >  working tree &rarr; `git add` &rarr; staging area &rarr; `git commit` &rarr; repository
 
 ### The staging area
-So what's the point of the staging area? Mainly it provides an extra buffer between working tree and repository. It gives you the chance to reconsider But it also means that you can make several changes and then decide which of your changes you add to the staging area to commit. 
+So what's the point of the staging area? Mainly it provides an extra buffer between working tree and repository. It gives you the chance to reconsider and to answer the question `Are you sure?` for each change you've made. If the answer is yes, you can commit the change. If the answer is no, you can simply unstage with `git reset`.
 
-My tip is to use the staging area to create meaningful commits. After all, the Git history is commit-based (a commit is a snaphot of the entire repository) and there a number of advantages to keeping a clean history with meaningful commits. For example, if a bug was introduced, it's easier to pinpoint the guilty commit. Or reviewing a big pull request can be simplified by reviewing the commits instead.
+However, the staging area also allows you to make several changes and then decide which of your changes you add to the staging area to commit. In this way you can split up your work into meaningful commits. After all, the Git history is commit-based - every commit is a snaphot of the entire repository - and there a number of advantages to keeping a clean history with meaningful commits. For example, if a bug was introduced, it's easier to pinpoint the guilty commit, or reviewing a big pull request can be simplified by reviewing the commits instead.
 
-To make this very concrete, let's say you've started working on a new feature. You make your code changes for the feature but also fix a bug, clean up some files or do some refactoring not directly related to this new feature. To keep a clean history you can separate these unrelated changes from the feature changes by first staging and committing one set of changes and then the other.
-
-This has already brought me further than I'd thought but you'd be surprised how little the staging area is actually used. For completeness, let me add that the staging area can be skipped with the `--all` flag if you only need to modify or delete existing files: `git commit -a`.
+For completeness, let me add that the staging area can be skipped with the `--all` flag if you only need to modify or delete existing files: `git commit -a`.
 
 ### Branches and HEAD
 Git supports the idea of branching. This allows one or more developers to work on several features or bugfixes at the same time. Whenever you make code changes you need to make them on a branch. When you create a new repository with `git init` you will initially have only one branch `master` or `main`. 
