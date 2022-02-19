@@ -50,6 +50,7 @@ So Git branches operate like branches of a tree, the main difference being that 
 
 ### References and HEAD
 
+
 how does git know which code to show (local repo)
 
 good time to tell you about .git folder
@@ -86,3 +87,5 @@ Tools: Posh Git, VSCode extensions
 ## References
 
 https://rogerdudler.github.io/git-guide/
+https://git-scm.com/book/en/v2/Git-Internals-Git-References
+- vscode as git editor, difftool and mergetool: https://www.roboleary.net/vscode/2020/09/15/vscode-git.html
